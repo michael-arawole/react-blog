@@ -1,4 +1,8 @@
 # React and Tailwind Blog
+![image](https://user-images.githubusercontent.com/39175160/192039867-db674f10-c595-4419-9c63-d9d6ca074163.png)
+
+![image](https://user-images.githubusercontent.com/39175160/192039930-1d9f7205-5146-43c7-a425-109514e32ca3.png)
+
 
 # Installation
 Edit package.json and change the homepage path to your url
