@@ -3,6 +3,11 @@ import {useState} from 'react';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
+    var isLoggedIn = false;
+    if (localStorage.getItem('login_token') !== null) {
+        isLoggedIn = true;
+    }
+    // const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <>
             <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gray-500">
@@ -28,14 +33,6 @@ const Navbar = () => {
                         id="example-navbar-danger"
                     >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                            
-                            <li className="nav-item">
-                                <Link to={`${process.env.PUBLIC_URL}`}
-                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                                >
-                                   <span className="ml-2">Home</span>
-                                </Link>
-                            </li>
                             <li className="nav-item">
                                 <Link to={`${process.env.PUBLIC_URL}/create`}
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
@@ -43,6 +40,27 @@ const Navbar = () => {
                                    <span className="ml-2">Create</span>
                                 </Link>
                             </li>
+                            {!isLoggedIn && <li className="nav-item">
+                                <Link to={`${process.env.PUBLIC_URL}/login`}
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                >
+                                   <span className="ml-2">Login</span>
+                                </Link>
+                            </li>}
+                            {isLoggedIn && <li className="nav-item">
+                                <Link to={`${process.env.PUBLIC_URL}/my-blogs`}
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                >
+                                   <span className="ml-2">My Blogs</span>
+                                </Link>
+                            </li>}
+                            {isLoggedIn && <li className="nav-item">
+                                <Link to={`${process.env.PUBLIC_URL}/logout`}
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                >
+                                   <span className="ml-2">Logout</span>
+                                </Link>
+                            </li>}
                         </ul>
                     </div>
                 </div>

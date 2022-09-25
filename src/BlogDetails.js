@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, /* useNavigate */ } from 'react-router-dom';
 import useFetch from './useFetch';
 import parse from 'html-react-parser';
 import ErrorBlock from './ErrorBlock';
@@ -6,7 +6,7 @@ import ErrorBlock from './ErrorBlock';
 const BlogDetails = () => {
     const { id } = useParams();
     const { data: blog, isPending, error } = useFetch('https://demo.logad.net/react-blog/api/blogs/' + id);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     /* const handleDelete = (id) => {
         fetch('https://demo.logad.net/react-blog/api/blogs/' + blog.id, {
             method: 'DELETE'

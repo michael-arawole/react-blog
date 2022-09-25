@@ -4,6 +4,7 @@
 Edit package.json and change the homepage path to your url
 
 Run `npm install` to download the required packages
+
 Then run `npm start`
 
 ### `npm start`
